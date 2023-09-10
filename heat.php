@@ -23,6 +23,7 @@ echo "<p>In the Summer, when people say \"It's not the heat, it's the humidity\"
 
 define ('TABLE_HEADER', 'Heat Index');
 
+// Determine if form has been submitted (if not, nothing happens besides the page/form loading)
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	// temperature variable
@@ -81,10 +82,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 				<legend>Enter temperature and humidity:</legend><br>
 
 				<label>Temperature: </label>
-                <input type="number" name="temperature" value="<?php if (isset($_POST['temperature'])) echo $_POST['temperature']; ?>"><br><br>
+                <input type="number" name="temperature"><br><br>
 				
                 <label>Humidity: </label>
-                <input type="number" name="relativeHumidity" value="<?php if (isset($_POST['relativeHumidity'])) echo $_POST['relativeHumidity']; ?>"><br><br>
+                <input type="number" name="relativeHumidity"><br><br>
 				
                 <input type="submit" value="Gimme the Heat Index">
 			</fieldset>
